@@ -17,19 +17,30 @@ connectDB();
 app.use(bodyParser.json());
 
 // Detailed CORS Configuration
-const corsOptions = {
-    origin: [
-        "http://localhost:3000",
+// const corsOptions = {
+//     origin: [
+//         "http://localhost:3000",
         
-        "https://chatbox-blond.vercel.app/",
-      ],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-};
+//         "https://chatbox-blond.vercel.app/",
+//       ],
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Allowed methods
+//     allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+//     preflightContinue: false,
+//     optionsSuccessStatus: 204,
+// };
 
-app.use(cors(corsOptions)); // Enable CORS with options
+// app.use(cors(corsOptions)); // Enable CORS with options
+app.use(
+    cors({
+        origin: [
+                    "http://localhost:3000",
+                    
+                    "https://chatbox-blond.vercel.app/",
+                  ],
+      credentials: true,
+      exposedHeaders: ["ip"],
+    })
+  );
 
 // Handle preflight requests
 app.options('*', cors(corsOptions));
