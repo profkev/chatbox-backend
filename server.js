@@ -43,7 +43,7 @@ app.use(
   );
 
 // Handle preflight requests
-app.options('*', cors(corsOptions));
+// app.options('*', cors(corsOptions));
 
 // Initialize NLP manager
 let classifier = new natural.BayesClassifier();
