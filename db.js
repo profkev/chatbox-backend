@@ -1,7 +1,8 @@
-// backend/db.js
 
 const mongoose = require('mongoose');
-require('dotenv').config(); // Load environment variables
+
+require('dotenv').config();
+// hwtahhavdhad
 
 const connectDB = async () => {
     try {
@@ -16,4 +17,4 @@ const connectDB = async () => {
     }
 };
 
-module.exports = connectDB;
+module.exports = connectDB
