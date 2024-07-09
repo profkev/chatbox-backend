@@ -18,7 +18,11 @@ app.use(bodyParser.json());
 
 // Detailed CORS Configuration
 const corsOptions = {
-    origin: 'http://localhost:3000', // Allow only this origin to access the server
+    origin: [
+        "http://localhost:3000",
+        
+        "https://chatbox-blond.vercel.app/",
+      ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
     preflightContinue: false,
